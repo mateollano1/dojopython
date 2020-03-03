@@ -10,10 +10,8 @@ aplicaciones web.
 
 * Python -> 3.6.x (La version 3.7.x aún presenta incompatibilidad con varias librerías usadas, e.g. celery)
 * flask -> 1.0.x
-* celery -> 4.2.x
 * redis -> 4.0.x - 5.0.x (Se ha probado en esas versiones y funciona correctamente)
-* MySQL -> 5.6.x (En desarrollo se probó con la version 8 y sigue siendo compatible)
-
+* pandas -> 0.25.0
 
 ## Para empezar
 ### Ambiente virtual de python
