@@ -33,19 +33,22 @@ pip3 install virtualenvwrapper
 ~~~~
 
 Editamos el archivo de configuración bashcr y agregarmos las siguientes lineas al final del archivo.
+Para esto nos paramos en la base del proyecto
 
 ~~~~
+cd /home/drai06
 nano .bashrc
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source /home/ubuntu/.local/bin/virtualenvwrapper.sh
+source /home/drai06/.local/bin/virtualenvwrapper.sh
 ~~~~
 
-Ejecutamos el siguiente comando para aplicar los cambios.
+Parados en la carpeta base ejecutamos el siguiente comando para aplicar los cambios.
+`cd /home/drai06`
 
-`source .bashrc`
+`source ~/.bashrc`
 
 Importante: crear el ambiente con la version 3.6.x de Python. Para instalar las diferentes librerías y paquetes en 
 python se debe tener instalador el manejadro de paquetes de python PIP. Normalmente viene instalado en sistemas UNIX. 
@@ -74,38 +77,14 @@ Esto sirve para no tener conflictos con versiones y otras librerías.
 Ya creado y activado el ambiente virtual de python, con la version requerida, se pueden instalar las dependencias de 
 la aplicación. Para instalar las dependencias se usa el siguiente comando dentro del ambiente virtual ubicando la 
 consola en la carpeta base del proyecto:
+Descargamos el proyecto en el escritorio y accedemos a la carpeta por consola
+
+`cd /home/drai06/Desktop/dojopython-master`
 
 `pip install -e .`
 
 Todas las dependencias se encuentran en el archivo setup.py el cual es identificado por el comando anterior para 
 poder instalar los paquetes requeridos.
-
-Fuera del ambiente virtual se debe instalar redis para ello ejecutamos los siguientes comandos:
-
-`sudo apt install redis-server`
-
-Luego editamos el achivo de configuración redis.conf cambiando la configuración "supervised" a "systemd" y reiniciamos el servicio
-
-`sudo apt install redis-server`
-
-~~~~
-sudo nano /etc/redis/redis.conf
-
-. . .
-
-# If you run Redis from upstart or systemd, Redis can interact with your
-# supervision tree. Options:
-#   supervised no      - no supervision interaction
-#   supervised upstart - signal upstart by putting Redis into SIGSTOP mode
-#   supervised systemd - signal systemd by writing READY=1 to $NOTIFY_SOCKET
-#   supervised auto    - detect upstart or systemd method based on
-#                        UPSTART_JOB or NOTIFY_SOCKET environment variables
-# Note: these supervision methods only signal "process is ready."
-#       They do not enable continuous liveness pings back to your supervisor.
-supervised systemd
-
-sudo systemctl restart redis.service
-~~~~ 
 
 ### Instalación gestor de paquetes
 Es requerido administrar las librerias externas por medio de un gestor de paquetes, para ello debemos instalar webpack
@@ -120,6 +99,7 @@ sudo apt-get install nodejs
 Posterior a la instalación nos ubicamos en la carpeta /app/static/ y ejecutamos los comandos
 
 ~~~~
+cd /home/drai06/Desktop/dojopython-master/app/static
 sudo npm install
 npm run build
 ~~~~ 
@@ -137,16 +117,9 @@ export FLASK_APP=run.py
 export FLASK_ENV=development
 ~~~~
 
-El siguiente comando sirve para iniciar el servidor de aplicaciones que viene por defecto con flask:
-
-`flask run -h 0.0.0.0`
-
-El parametro -h (host) se establece en 0.0.0.0 si se necesita acceder al servidor a través de una IP diferente a 
-localhost.
-
 Si se desea probar el servicio a través del servidor de aplicaciones gunicorn el comando sería el siguiente:
 
-`gunicorn -b localhost:8000 -w 1 run:app --timeout 1200 --threads 4`
+`gunicorn -b localhost:8000 -w 1 run:app --timeout 1200`
 
 Si se quieren imprimir mensajes de debug, se debe agregar al comando el parametro --log-level=debug
 
