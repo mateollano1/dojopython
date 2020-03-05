@@ -14,29 +14,6 @@ aplicaciones web.
 * pandas -> 0.25.0
 
 ## Para empezar
-Se debe instalar redis para ello ejecutamos los siguientes comandos:
-
-`sudo apt install redis-server`
-
-Luego editamos el achivo de configuración redis.conf cambiando la configuración "supervised" a "systemd" y reiniciamos el servicio
-
-~~~~
-sudo nano /etc/redis/redis.conf
-. . .
-# If you run Redis from upstart or systemd, Redis can interact with your
-# supervision tree. Options:
-#   supervised no      - no supervision interaction
-#   supervised upstart - signal upstart by putting Redis into SIGSTOP mode
-#   supervised systemd - signal systemd by writing READY=1 to $NOTIFY_SOCKET
-#   supervised auto    - detect upstart or systemd method based on
-#                        UPSTART_JOB or NOTIFY_SOCKET environment variables
-# Note: these supervision methods only signal "process is ready."
-#       They do not enable continuous liveness pings back to your supervisor.
-supervised systemd
-
-sudo systemctl restart redis.service
-~~~~ 
-
 ### Ambiente virtual de python
 Antes de empezar se recomienda usar un ambiente virtual de python. Para esto se pueden usar las librerias virtualenv 
 y virtualenvwrapper. virtualenvwrapper es una libreria que ayuda a gestionar los ambientes creados con virtualenv.
