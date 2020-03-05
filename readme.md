@@ -102,7 +102,7 @@ la aplicación. Para instalar las dependencias se usa el siguiente comando dentr
 consola en la carpeta base del proyecto:
 Descargamos el proyecto en el escritorio y accedemos a la carpeta por consola
 
-`cd /home/drai06/Desktop/dojopython-master`
+`cd /home/drai06/Escritorio/dojopython-master`
 
 `pip install -e .`
 
@@ -122,7 +122,7 @@ sudo apt-get install nodejs
 Posterior a la instalación nos ubicamos en la carpeta /app/static/ y ejecutamos los comandos
 
 ~~~~
-cd /home/drai06/Desktop/dojopython-master/app/static
+cd /home/drai06/Escritorio/dojopython-master/app/static
 sudo npm install
 npm run build
 ~~~~ 
