@@ -91,9 +91,8 @@ Es requerido administrar las librerias externas por medio de un gestor de paquet
 mediante npm y nodejs, ejecutamos los diguientes comandos.
 
 ~~~~ ################################# NO HACER (?) ####################
-sudo apt-get install curl
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install nodejs
+
+sudo apt install nodejs
 ~~~~ 
 
 Posterior a la instalación nos ubicamos en la carpeta /app/static/ y ejecutamos los comandos
