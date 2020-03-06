@@ -11,7 +11,7 @@ aplicaciones web.
 * Python -> 3.6.x (La version 3.7.x aún presenta incompatibilidad con varias librerías usadas, e.g. celery)
 * flask -> 1.0.x
 * redis -> 4.0.x - 5.0.x (Se ha probado en esas versiones y funciona correctamente)
-* pandas -> 0.25.0
+* pandas -> 0.24.2
 
 ## Para empezar
 ### Ambiente virtual de python
@@ -90,7 +90,7 @@ poder instalar los paquetes requeridos.
 Es requerido administrar las librerias externas por medio de un gestor de paquetes, para ello debemos instalar webpack
 mediante npm y nodejs, ejecutamos los diguientes comandos.
 
-~~~~
+~~~~ ################################# NO HACER (?) ####################
 sudo apt-get install curl
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install nodejs
@@ -100,8 +100,7 @@ Posterior a la instalación nos ubicamos en la carpeta /app/static/ y ejecutamos
 
 ~~~~
 cd /home/drai06/Escritorio/dojopython-master/app/static
-sudo npm install
-npm run build
+sudo apt install npm
 ~~~~ 
 
 ## Correr en ambiente de desarrollo
@@ -114,7 +113,6 @@ En sistemas UNIX se hace de la siguiente manera:
 
 ~~~~
 export FLASK_APP=run.py
-export FLASK_ENV=development
 ~~~~
 
 Si se desea probar el servicio a través del servidor de aplicaciones gunicorn el comando sería el siguiente:
