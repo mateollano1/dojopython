@@ -57,13 +57,13 @@ y en MACOS puede ser instalado con brew al instalar la version de Python requeri
 
 Para crear el ambiente con virtualenvwrapper se usa el siguiente comando:
 
-`mkvirtualenv -p python3.6 dojo`
+`mkvirtualenv -p python3.6 dojopython`
 
 La version python3.6 debe estar instalada en el equipo para poder usarla en la creacion del ambiente.
 
 Para trabajar con el ambiente de python creado se usa el comando:
 
-`workon dojo`
+`workon dojopython`
 
 Para salir del ambiente y volver a la version local de python se usa el comando:
 
