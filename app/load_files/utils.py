@@ -94,6 +94,15 @@ def process_balances_file(balances_file, file_type='monthly', selected_date=None
         transform_month_data_frame(balances_df)
         duplicate_rows_df = balances_df[balances_df.duplicated(['account_id'])]
         
+        balances_df.drop_duplicates(subset = "account_id",keep = False, inplace = True)
+        print('************ balances')
+        print(balances_df)
+        duplicate = balances_df.groupby('account_id', as_index = False)
+        print('************ duplicate')
+        print(duplicate)
+        sum_dataframe = duplicate.sum()
+        print('************ sum')
+        print(sum_dataframe)
         return balances_df
 
     else:
